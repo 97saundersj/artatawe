@@ -66,7 +66,6 @@ public class BidManagement {
 		if(accepted) {
 			if(art.bidAvaliable()) {
 				//FINAL ACCEPT
-				bids.remove(highestBid);
 				art.addBid(bid);
 				bids.add(bid);
 			}
