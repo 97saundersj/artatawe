@@ -68,9 +68,9 @@ public class ArtworkManagement {
     * @param height the height of the sculpture
     * @param material the material the sculpture is made from
     */
-    public void addArtwork(String title, String description, Image mainPhoto, Profile creator, int yearOfCreation, int reservePrice, int noOfBids, int width, int height, String material) {
-        Artwork sculpture = new Artwork(title, description, mainPhoto, creator, yearOfCreation, reservePrice, noOfBids, width, height, material);
-        artworks.add(sculpture);
+    public void addSculpture(String title, String description, Image mainPhoto, Profile creator, int yearOfCreation, int reservePrice, int noOfBids, int width, int height, int depth, String material) {
+        Sculpture sculpture = new Sculpture(title, description, mainPhoto, creator, yearOfCreation, reservePrice, noOfBids, width, height, depth, material);
+    	artworks.add(sculpture);
     }
     
     /**
