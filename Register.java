@@ -13,12 +13,19 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 
 public class Register extends Application {
-	Database database; //a link to the database
-	
-	Register(Database database) {
+	Database database;
+	public void setDatabase(Database database) {
 		this.database = database;
 	}
-	
+	public Stage returnStage(Stage primaryStage) {
+		primaryStage.setTitle("Registration Form");
+        GridPane gridPane = createRegister();
+        addUIControls(gridPane);
+        Scene scene = new Scene(gridPane, 400, 400);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+        return primaryStage;
+	}
     @Override
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("Registration Form");
@@ -94,9 +101,5 @@ public class Register extends Application {
         alert.setContentText(message);
         alert.initOwner(owner);
         alert.show();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
     }
 }

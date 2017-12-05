@@ -23,15 +23,16 @@ public class ArtataweMain extends Application {
 	public void initialiseObjects() {
 		//database needs to be given to every gui class
 		database = new Database();
-		
-		register = new Register(database);
+		register = new Register();
+		register.setDatabase(database);
 	}
 	
 	@Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../gui/login.fxml"));
-        primaryStage.setTitle("Artatawe");
-        primaryStage.setScene(new Scene(root, 500, 450));
+        //Parent root = FXMLLoader.load(getClass().getResource("../gui/login.fxml"));
+        //primaryStage.setTitle("Artatawe");
+        //primaryStage.setScene(new Scene(root, 500, 450));
+        primaryStage = register.returnStage(primaryStage);
         primaryStage.show();
     }
 
