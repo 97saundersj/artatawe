@@ -8,12 +8,22 @@ import java.time.LocalDateTime;
  */
 public class Database {
 	private BidManagement bidManagement;
-	//ArtworkManagement artworkManagement;
+	private ArtworkManagement artworkManagement;
 	//ProfleManagement profileManagement;
 	
 	public Database() {}
-	
-	public void addBid(Profile bidder, Artwork art, int price, LocalDateTime bidStart) {
-		bidManagement.addBid(bidder, art, price, bidStart);
+	/**
+	 * This returns the bidmanagement, so the classes can manipulate the bids
+	 * @return bidmanagement
+	 */
+	public BidManagement manageBids() {
+		return bidManagement;
+	}
+	/**
+	 * This returns the artworkmanagement, so the classes can manipulate the artworks
+	 * @return artworkmanagement
+	 */
+	public ArtworkManagement manageArtwork() {
+		return artworkManagement;
 	}
 }
