@@ -13,7 +13,12 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 
 public class Register extends Application {
-
+	Database database; //a link to the database
+	
+	Register(Database database) {
+		this.database = database;
+	}
+	
     @Override
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("Registration Form");

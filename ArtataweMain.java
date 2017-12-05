@@ -12,8 +12,19 @@ import javafx.stage.Stage;
  * cant be called main, pretty sure the main is just meant to have static method and nothing else
  */
 public class ArtataweMain extends Application {
+	Database database;
+	Register register;
+	
 	public ArtataweMain() {
+		//initialise objects
+		initialiseObjects();
 		
+	}
+	public void initialiseObjects() {
+		//database needs to be given to every gui class
+		database = new Database();
+		
+		register = new Register(database);
 	}
 	
 	@Override
