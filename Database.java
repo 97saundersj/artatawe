@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 public class Database {
 	private BidManagement bidManagement;
 	private ArtworkManagement artworkManagement;
-	//ProfleManagement profileManagement;
+	private ProfileManagement profileManagement;
 	
 	public Database() {}
 	/**
@@ -19,11 +19,18 @@ public class Database {
 	public BidManagement manageBids() {
 		return bidManagement;
 	}
-	/**
+	/** 
 	 * This returns the artworkmanagement, so the classes can manipulate the artworks
 	 * @return artworkmanagement
 	 */
 	public ArtworkManagement manageArtwork() {
 		return artworkManagement;
+	}
+	/** 
+	 * This returns the profile management, so the classes can manipulate the profiles
+	 * @return profilemanagement
+	 */
+	public ProfileManagement manageProfiles() {
+		return profileManagement;
 	}
 }

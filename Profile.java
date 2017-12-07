@@ -1,5 +1,6 @@
 
 import java.awt.Image;
+import java.util.ArrayList;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -12,82 +13,95 @@ import java.awt.Image;
  * @author Alex
  */
 public class Profile {
-    private String lastName;
-    private String firstName;
-    private String userName;
-    private String phoneNo;
-    private String adress;
-    private String postCode;
-    private Image profilePic;
+	private String lastName;
+	private String firstName;
+	private String userName;
+	private String phoneNo;
+	private String adress;
+	private String postCode;
+	private Image profilePic;
+	private ArrayList<Profile> favourites;
+	private ArrayList<Artwork> artworksWon;
 
-    public Profile(String lastName, String firstName, String userName, String phoneNo, String adress, String postCode) {
-        if(phoneNo.length() != 11 && phoneNo.charAt(0) != 0 && phoneNo.charAt(1) != 7){
-            System.out.println("Not a valid number");
-        }
-        else{
-            this.lastName = lastName;
-            this.firstName = firstName;
-            this.userName = userName;
-            this.phoneNo = phoneNo;
-            this.adress = adress;
-            this.postCode = postCode;
-            profilePic = null;
-        }
-    }
+	public Profile(String lastName, String firstName, String userName, String phoneNo, String adress, String postCode) {
+		favourites = new ArrayList<Profile>();
+		artworksWon = new ArrayList<Artwork>();
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.userName = userName;
+		this.phoneNo = phoneNo;
+		this.adress = adress;
+		this.postCode = postCode;
+		profilePic = null;
 
-    public String getLastName() {
-        return lastName;
-    }
+	}
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+	public String getLastName() {
+		return lastName;
+	}
 
-    public String getFirstName() {
-        return firstName;
-    }
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+	public String getFirstName() {
+		return firstName;
+	}
 
-    public String getUserName() {
-        return userName;
-    }
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
+	public String getUserName() {
+		return userName;
+	}
 
-    public String getPhoneNo() {
-        return phoneNo;
-    }
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 
-    public void setPhoneNo(String phoneNo) {
-        this.phoneNo = phoneNo;
-    }
+	public String getPhoneNo() {
+		return phoneNo;
+	}
 
-    public String getAdress() {
-        return adress;
-    }
+	public void setPhoneNo(String phoneNo) {
+		this.phoneNo = phoneNo;
+	}
 
-    public void setAdress(String adress) {
-        this.adress = adress;
-    }
+	public String getAdress() {
+		return adress;
+	}
 
-    public String getPostCode() {
-        return postCode;
-    }
+	public void setAdress(String adress) {
+		this.adress = adress;
+	}
 
-    public void setPostCode(String postCode) {
-        this.postCode = postCode;
-    }
+	public String getPostCode() {
+		return postCode;
+	}
 
-    public Image getProfilePic() {
-        return profilePic;
-    }
+	public void setPostCode(String postCode) {
+		this.postCode = postCode;
+	}
 
-    public void setProfilePic(Image profilePic) {
-        this.profilePic = profilePic;
-    }
+	public Image getProfilePic() {
+		return profilePic;
+	}
+
+	public void setProfilePic(Image profilePic) {
+		this.profilePic = profilePic;
+	}
+
+	public void addFavourite(Profile profile) {
+		favourites.add(profile);
+	}
+	public ArrayList<Profile> getFavourites() {
+		return favourites;
+	}
+	public void addArtworkWon(Artwork art) {
+		artworksWon.add(art);
+	}
+	public ArrayList<Artwork> getArtworksWon() {
+		return artworksWon;
+	}
 }

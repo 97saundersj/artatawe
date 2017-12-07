@@ -17,19 +17,6 @@ public class BidManagement {
 		bids = new ArrayList<Bid>();
 	}
 	/**
-	 * A method to return an array of bids from an araylist of bids
-	 * used internally
-	 * @param arrayList the array list of bids
-	 * @return a bid array containing the same elements as the array list
-	 */
-	private Bid[] convertToArray(ArrayList<Bid> arrayList) {
-		Bid[] array = new Bid[arrayList.size()];
-		for(int i = 0; i < arrayList.size(); i++) {
-			array[i] = arrayList.get(i);
-		}
-		return array;
-	}
-	/**
 	 * Adds a new bid to the system
 	 * @param bidder the profile that registered the bid
 	 * @param art the art that the bid references
@@ -68,6 +55,9 @@ public class BidManagement {
 				//FINAL ACCEPT
 				art.addBid(bid);
 				bids.add(bid);
+				if(art.bidAvaliable() == false) {
+					bidder.addArtworkWon(art);
+				}
 			}
 			else {
 				// REFUSE: Bid refused, there is already the allocated bids on the artwork
@@ -79,8 +69,8 @@ public class BidManagement {
 	 * returns all of the bids currently in the system
 	 * @return bid array, an array of every bid object registered
 	 */
-	public Bid[] getAllBids() {
-		return convertToArray(bids);
+	public ArrayList<Bid> getAllBids() {
+		return bids;
 	}
 	/**
 	 * returns all of the bids that a profile has put on to the sysetm
@@ -88,14 +78,14 @@ public class BidManagement {
 	 * @param profile the profile whose bids are to be found
 	 * @return a bid array of all of the bids that the profile has listed
 	 */
-    public Bid[] getBidByProfile(Profile profile) {
+    public ArrayList<Bid> getBidByProfile(Profile profile) {
         ArrayList<Bid> temp = new ArrayList<Bid>();
         for(int i = 0; i < bids.size(); i++) {
         	if(bids.get(i).getBidder() == profile) {
         		temp.add(bids.get(i));
         	}
         }
-        return convertToArray(temp);
+        return temp;
 		
 	}
 	
