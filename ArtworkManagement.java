@@ -219,15 +219,27 @@ public class ArtworkManagement {
 					currentBids.add(-1);
 				}
 				String description = data[8]; 
-				if (data[9].equals("Sculpture")){
-					String material = data[10];
-					String depth = data[11];
+				String type = data[9];
+				String material=null;
+				String depth=null;
+				if (type.equals("Sculpture")){
+					material = data[10];
+					depth = data[11];
 				}
 				
-				artworks.add(new Artwork(title, description, null, null, 
-						Integer.parseInt(yearOfCreation), Integer.parseInt(reservePrice), 
-						Integer.parseInt(noOfBids), Integer.parseInt(width), Integer.parseInt(height)
-						));
+				if(type.equals("Artwork")){
+					artworks.add(new Artwork(title, description, null, null, 
+							Integer.parseInt(yearOfCreation), Integer.parseInt(reservePrice), 
+							Integer.parseInt(noOfBids), Integer.parseInt(width), Integer.parseInt(height)
+							));
+				}
+				else{
+					artworks.add(new Sculpture(title, description, null, null, 
+							Integer.parseInt(yearOfCreation), Integer.parseInt(reservePrice), 
+							Integer.parseInt(noOfBids), Integer.parseInt(width), Integer.parseInt(height),Integer.parseInt(depth),material
+							));
+				}
+				
 			}
 			fileReader.close();
 		} catch (Exception e) {
