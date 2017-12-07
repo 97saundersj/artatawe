@@ -33,8 +33,11 @@ class Bid {
     	this.price = price;
     	this.bidStart = bidStart;
     	this.art = art;
+    	this.bidStart = bidStart;
     }
-
+    public void setBidder(Profile p) {
+    	this.bidder = p;
+    }
     /**
      * Return the bidder of the bid, a profile object
      * @return the profile object of the bidder who set the bid
@@ -78,5 +81,9 @@ class Bid {
 	 */
 	public Artwork getArt() {
 		return art;
+	}
+
+	public void setBidStart(LocalDateTime bidStart) {
+		this.bidStart = bidStart;
 	}
 }

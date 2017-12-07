@@ -202,4 +202,8 @@ public class ProfileManagement {
 		}
 		return false;
 	}
+
+	public ArrayList<Profile> getProfiles() {
+		return profiles;
+	}
 }

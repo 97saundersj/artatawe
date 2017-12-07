@@ -13,7 +13,11 @@ public class Database {
 	private ArtworkManagement artworkManagement;
 	private ProfileManagement profileManagement;
 	
-	public Database() {}
+	public Database() {
+		this.bidManagement = new BidManagement();
+		this.artworkManagement = new ArtworkManagement();
+		this.profileManagement = new ProfileManagement();
+	}
 	/**
 	 * This returns the bidmanagement, so the classes can manipulate the bids
 	 * @return bidmanagement
@@ -41,35 +45,8 @@ public class Database {
 	public void save() {
 		//save the profiles
 		profileManagement.save();
-		/*
-		 * .write(name0
-		 * .write(lastName)
-		 * 
-		 * .write(favourites.size());
-		 * for(int i = 0; favourites.size()) {
-		 * 	write(favourites.get(i).getUsername());
-		 * }
-		 */
-		
-		/* ArrayList<String[]> favouritesNameAll;
-		 * while(nextLine) {
-		 * 	String name
-		 * String lastname = 
-		 * int favouritesNumber
-		 * favouritesNameAll.get(i) = new String[favouritesNumber];
-		 * for(int i = 0; i < favouritesNumber; i++) {
-		 * 		favouritesNameAll.get(i)[i] = scan.next();
-		 * }
-		 * 
-		 * for(int a = 0; a < favouritesNameAll.size(); a++) {
-		 * 	for(int b = 0; b < favouritesNameAll.get(a).length; b++) {
-		 *   profiles.get(a).addFavourite(searchProfiles(favouritesNameAll.get(a)[b]));
-		 *  }
-		 * }
-		 * 
-		 * 
-		 */
-		
+		artworkManagement.save();
+		bidManagement.save();
 
 	}
 	/**
@@ -78,10 +55,10 @@ public class Database {
 	public void load() {
 		artworkManagement.load();
 		profileManagement.load();
-		//bidManagement.load();
+		bidManagement.load();
 		
 		profileManagement.loadReferences(artworkManagement);
-		/*artworkManagement.loadReferences();
-		bidManagement.loadReferences();*/
+		artworkManagement.loadReferences(bidManagement,profileManagement);
+		bidManagement.loadReferences(artworkManagement,profileManagement);
 	}
 }
