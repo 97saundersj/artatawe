@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.FileWriter;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -8,6 +10,7 @@ import java.util.ArrayList;
  */
 public class BidManagement {
 	private ArrayList<Bid> bids;
+	private final String fileName = "src/data/Bids.txt";
 	
 	/**
 	 * Creates a new BidManagement object
@@ -24,7 +27,7 @@ public class BidManagement {
 	 * @param bidStart the time and date of the start of the bid, in LocalDateTime
 	 */
 	public void addBid(Profile bidder, Artwork art, int price, LocalDateTime bidStart) {
-		Bid bid = new Bid(bidder, price, bidStart);
+		Bid bid = new Bid(bidder, art, price, bidStart);
 		Bid highestBid = art.getCurrentBid();
 		boolean accepted = false;
 		if(highestBid == null) {
@@ -88,6 +91,50 @@ public class BidManagement {
         return temp;
 		
 	}
+	/**
+	 * returns all of the bids that have been placed on an artwork
+	 * @param artwork, the artwork whose bids to find
+	 * @return a bid array of all of the bids that the profile has listed
+	 */
+    public ArrayList<Bid> getBidByArtwork(Artwork artwork) {
+        ArrayList<Bid> temp = new ArrayList<Bid>();
+        for(int i = 0; i < bids.size(); i++) {
+        	if(bids.get(i).getArt() == artwork) {
+        		temp.add(bids.get(i));
+        	}
+        }
+        return temp;
+		
+	}
+    public Bid searchByID(int ID){
+    	Bid tmp = null;
+    	for (int i = 0; i< this.bids.size();i++){
+    		if (bids.get(i).getId() == ID){
+    			tmp =  bids.get(i);
+    		}
+
+    	}
+    	return tmp;
+    }
+    
+    public void save() {
+		File file = new File(fileName);
+		try {
+			FileWriter fileWriter = new FileWriter(file);
+			for (int i = 0; i < bids.size(); i++) {
+				String line = "";
+				line += bids.get(i).getBidder().getUserName() +",";
+				line += bids.get(i).getArt().getId() +",";
+				line += bids.get(i).getPrice() +",";
+				line += bids.get(i).getBidder().getUserName() +",";
+				fileWriter.write(line);
+				fileWriter.write("\n");
+			}
+			fileWriter.close();
+		} catch (Exception e) {
+			// file io error
+			e.printStackTrace();
+		}
 	
 	
 	

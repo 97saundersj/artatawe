@@ -39,7 +39,8 @@ public class Database {
 	 * saves every object, one at a time, after ordering them according to ids, desc. 
 	 */
 	public void save() {
-		
+		//save the profiles
+		profileManagement.save();
 		/*
 		 * .write(name0
 		 * .write(lastName)
@@ -75,22 +76,12 @@ public class Database {
 	 * loads all of the data from the storage file, and loads it into runtime memory
 	 */
 	public void load() {
-	
-		String profilePath = "profile.txt";
-		File profiles = new File(profilePath);
+		artworkManagement.load();
+		profileManagement.load();
+		//bidManagement.load();
 		
-		String artworkPath = "artwork.txt";
-		File artwork = new File(artworkPath);
-		
-		String bidPath = "bids.txt";
-		File bids = new File(bidPath);
-		
-		try {
-			//iteratively create the objects in order
-			//
-			Scanner scan = new Scanner(bids);
-		}catch(Exception e) {
-			//files not found
-		}
+		profileManagement.loadReferences(artworkManagement);
+		/*artworkManagement.loadReferences();
+		bidManagement.loadReferences();*/
 	}
 }

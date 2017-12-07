@@ -1,4 +1,5 @@
 
+
 import java.awt.Image;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ public class Artwork {
     protected int width;
     protected int height;
     protected Bid currentBid;
-
+    protected String type;
 
 
 
@@ -47,6 +48,7 @@ public class Artwork {
         this.allPhotos = new ArrayList<Image>();
         allPhotos.add(mainPhoto);
         this.startTime = LocalDateTime.now();
+        this.type = "Artwork";
     }
 
     public ArrayList<Image> getAllPhotos() {
@@ -88,7 +90,6 @@ public class Artwork {
     public void setMainPhoto(Image mainPhoto) {
         this.mainPhoto = mainPhoto;
     }
-
     public Profile getCreator() {
         return creator;
     }
@@ -147,6 +148,10 @@ public class Artwork {
 			return false;
 		}
 		return true;
+	}
+
+	public String getType() {
+		return type;
 	}
 }
 	

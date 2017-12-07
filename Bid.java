@@ -11,6 +11,7 @@ class Bid {
 	private static int idList;
 	private final int id;
     private Profile bidder;
+    private Artwork art;
     private int price;
     private LocalDateTime bidStart;
     //whether or not the bid is currently active, 
@@ -24,13 +25,14 @@ class Bid {
      * @param price the amount placed on this artwork
      * @param bidStart the date and time of the start of the bid
      */
-    Bid(Profile bidder, int price, LocalDateTime bidStart) {
+    Bid(Profile bidder, Artwork art, int price, LocalDateTime bidStart) {
 		idList ++;
 		id = idList;
 		
     	this.bidder = bidder;
     	this.price = price;
     	this.bidStart = bidStart;
+    	this.art = art;
     }
 
     /**
@@ -64,5 +66,17 @@ class Bid {
 	 */
 	public int getId() {
 		return id;
+	}
+	/**
+	 * set the artwork the bid is placed on
+	 */
+	public void setArt(Artwork a) {
+		this.art = a;
+	}
+	/**
+	 * get the artwork the bid is placed on
+	 */
+	public Artwork getArt() {
+		return art;
 	}
 }

@@ -18,6 +18,7 @@ public class Sculpture extends Artwork{
         super(title, description, mainPhoto, creator, yearOfCreation, reservePrice, noOfBids, width, height);
         this.depth = depth;
         this.material = material;
+        super.type = "Sculpture";
     }
 
     public int getDepth() {

@@ -18,13 +18,13 @@ public class Profile {
 	private String firstName;
 	private String userName;
 	private String phoneNo;
-	private String adress;
+	private String address;
 	private String postCode;
 	private Image profilePic;
 	private ArrayList<Profile> favourites;
 	private ArrayList<Artwork> artworksWon;
 
-	public Profile(String lastName, String firstName, String userName, String phoneNo, String adress, String postCode) {
+	public Profile(String lastName, String firstName, String userName, String phoneNo, String address, String postCode) {
 
 		favourites = new ArrayList<Profile>();
 		artworksWon = new ArrayList<Artwork>();
@@ -32,7 +32,7 @@ public class Profile {
 		this.firstName = firstName;
 		this.userName = userName;
 		this.phoneNo = phoneNo;
-		this.adress = adress;
+		this.address = address;
 		this.postCode = postCode;
 		profilePic = null;
 		
@@ -71,12 +71,12 @@ public class Profile {
 		this.phoneNo = phoneNo;
 	}
 
-	public String getAdress() {
-		return adress;
+	public String getAddress() {
+		return address;
 	}
 
 	public void setAdress(String adress) {
-		this.adress = adress;
+		this.address = adress;
 	}
 
 	public String getPostCode() {
