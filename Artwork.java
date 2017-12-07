@@ -14,6 +14,8 @@ import java.util.ArrayList;
  * @author Alex
  */
 public class Artwork {
+	protected static int idList;
+	protected final int id;
     protected String title;
     protected String description;
     protected Image mainPhoto;
@@ -31,7 +33,9 @@ public class Artwork {
 
 
 	public Artwork(String title, String description, Image mainPhoto, Profile creator, int yearOfCreation, int reservePrice, int noOfBids, int width, int height) {
-        this.title = title;
+        idList++;
+        id = idList;
+		this.title = title;
         this.description = description;
         this.mainPhoto = mainPhoto;
         this.creator = creator;
@@ -129,6 +133,9 @@ public class Artwork {
 		this.currentBid = currentBid;
 		noOfBids --;
 		
+	}
+	public int getId() {
+		return id;
 	}
 	/**
 	 * returns true if there is another bid avaliable, the

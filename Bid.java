@@ -8,6 +8,8 @@ import java.time.LocalDateTime;
  * @author Alex, Ziggy
  */
 class Bid {
+	private static int idList;
+	private final int id;
     private Profile bidder;
     private int price;
     private LocalDateTime bidStart;
@@ -23,6 +25,9 @@ class Bid {
      * @param bidStart the date and time of the start of the bid
      */
     Bid(Profile bidder, int price, LocalDateTime bidStart) {
+		idList ++;
+		id = idList;
+		
     	this.bidder = bidder;
     	this.price = price;
     	this.bidStart = bidStart;
@@ -53,4 +58,11 @@ class Bid {
 		return bidStart;
 	}
     
+	/**
+	 * returns the id of the class
+	 * @return id 
+	 */
+	public int getId() {
+		return id;
+	}
 }

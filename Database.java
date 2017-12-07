@@ -1,4 +1,6 @@
-import java.time.LocalDateTime;
+import java.util.Scanner;
+
+import java.io.File;
 
 /**
  * **TODO FULLY**
@@ -32,5 +34,33 @@ public class Database {
 	 */
 	public ProfileManagement manageProfiles() {
 		return profileManagement;
+	}
+	/**
+	 * saves every object, one at a time, after ordering them according to ids, desc. 
+	 */
+	public void save() {
+		
+		
+
+	}
+	/**
+	 * loads all of the data from the storage file, and loads it into runtime memory
+	 */
+	public void load() {
+		String bidPath = "bids.txt";
+		File bids = new File(bidPath);
+		
+		String profilePath = "profile.txt";
+		File profiles = new File(profilePath);
+		
+		String artworkPath = "artwork.txt";
+		File artwork = new File(artworkPath);
+		
+		try {
+			//iteratively create the objects in order
+			Scanner scan = new Scanner(bids);
+		}catch(Exception e) {
+			//files not found
+		}
 	}
 }

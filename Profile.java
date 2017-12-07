@@ -13,6 +13,7 @@ import java.util.ArrayList;
  * @author Alex
  */
 public class Profile {
+
 	private String lastName;
 	private String firstName;
 	private String userName;
@@ -24,6 +25,7 @@ public class Profile {
 	private ArrayList<Artwork> artworksWon;
 
 	public Profile(String lastName, String firstName, String userName, String phoneNo, String adress, String postCode) {
+
 		favourites = new ArrayList<Profile>();
 		artworksWon = new ArrayList<Artwork>();
 		this.lastName = lastName;
@@ -33,6 +35,7 @@ public class Profile {
 		this.adress = adress;
 		this.postCode = postCode;
 		profilePic = null;
+		
 
 	}
 
