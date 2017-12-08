@@ -1,0 +1,5 @@
+Contributions
+
+Jordan Pring
+In this assignment I worked mostly with the front end GUI's using FXML on IntelliJ. By doing so it made it very easy for the group to connect the front end to the back end as we all worked seperately on individual parts of the system. I also worked with Shun Lei Hai on the GUI's to make sure that the functionality was working as it should and the interface were styled proffesionally and the overall program looked neat.  
+ I attended each of the meetings that group held and would take advise from the rest of the group members in order to further proceed with the project and to find out what was needed to be done.
