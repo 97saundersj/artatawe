@@ -1,0 +1,111 @@
+
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Alex
+ */
+public class Profile {
+
+	private String lastName;
+	private String firstName;
+	private String userName;
+	private String phoneNo;
+	private String address;
+	private String postCode;
+	private String profilePic;
+	private ArrayList<Profile> favourites;
+	private ArrayList<Artwork> artworksWon;
+
+	public Profile(String lastName, String firstName, String userName, String phoneNo, String address, String postCode, String profilePic) {
+
+		favourites = new ArrayList<Profile>();
+		artworksWon = new ArrayList<Artwork>();
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.userName = userName;
+		this.phoneNo = phoneNo;
+		this.address = address;
+		this.postCode = postCode;
+		this.profilePic = profilePic;
+		
+
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPhoneNo() {
+		return phoneNo;
+	}
+
+	public void setPhoneNo(String phoneNo) {
+		this.phoneNo = phoneNo;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAdress(String adress) {
+		this.address = adress;
+	}
+
+	public String getPostCode() {
+		return postCode;
+	}
+
+	public void setPostCode(String postCode) {
+		this.postCode = postCode;
+	}
+
+	public String getProfilePicPath() {
+		return profilePic;
+	}
+
+	public void setProfilePicPath(String profilePic) {
+		this.profilePic = profilePic;
+	}
+
+	public void addFavourite(Profile profile) {
+		favourites.add(profile);
+	}
+	public ArrayList<Profile> getFavourites() {
+		return favourites;
+	}
+	public void addArtworkWon(Artwork art) {
+		artworksWon.add(art);
+	}
+	public ArrayList<Artwork> getArtworksWon() {
+		return artworksWon;
+	}
+}

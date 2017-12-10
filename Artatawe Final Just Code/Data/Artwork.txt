@@ -1,0 +1,3 @@
+Fuck me,JohnDick,1,2019,9,5,5,2017-12-10T19:14:33.634,2,Nothing here,Artwork,C:/Users/cyale/Desktop/Cs 135/DATABASE1.png,C:/Users/cyale/Desktop/Cs 135/DATABASE1.png,
+Fuck me part 2,JohnDick2,1,2019,0,5,5,2017-12-10T19:14:33.634,,Nothing here,Artwork,C:/Users/cyale/Desktop/Cs 135/DATABASE1.png,
+Fuck me 3,JohnDick,10,1,5,10,10,2017-12-10T19:14:33.635,,,Sculpture,tears,10,null,
