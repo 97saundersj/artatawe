@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.TextField?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ArtworkView">
+   <children>
+      <Label layoutX="282.0" layoutY="29.0" prefHeight="82.0" prefWidth="236.0" text="      ARTATAWE" textFill="#001eff">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <Label layoutX="300.0" layoutY="111.0" prefHeight="38.0" prefWidth="199.0" text="    View Artwork">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="105.0" layoutY="156.0" text="Title :" />
+      <Label layoutX="103.0" layoutY="233.0" text="Creator :" />
+      <Label layoutX="102.0" layoutY="311.0" text="Description :" />
+      <TextArea editable="false" layoutX="103.0" layoutY="339.0" prefHeight="159.0" prefWidth="309.0" />
+      <Label layoutX="103.0" layoutY="194.0" text="Price :" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#98cbfa" height="248.0" layoutX="477.0" layoutY="255.0" stroke="BLACK" strokeType="INSIDE" width="309.0" />
+      <ImageView fx:id="artworkImage" fitHeight="248.0" fitWidth="309.0" layoutX="477.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="103.0" layoutY="274.0" text="Type of artwork :" />
+      <Label fx:id = "title" layoutX="230.0" layoutY="156.0" text="getTitle" />
+      <Label fx:id = "price" layoutX="228.0" layoutY="194.0" text="getPrice" />
+      <Label fx:id = "creator" onMouseClicked = "#goToCreator" layoutX="229.0" layoutY="233.0" text="getCreator" />
+      <Label fx:id = "type" layoutX="228.0" layoutY="274.0" text="getType" />
+      <Button fx:id="placeBidBtn" onAction = "#placeBid" layoutX="302.0" layoutY="520.0" mnemonicParsing="false" text="Place Bid" />
+      <Button fx:id="closeBtn" layoutX="691.0" layoutY="575.0" mnemonicParsing="false" onAction="#closeWindow" text="Close" />
+      <Button fx:id="addFavUserBtn" onAction = "#addFavourite" layoutX="322.0" layoutY="229.0" mnemonicParsing="false" text="Add Favurite User" />
+      <Label layoutX="477.0" layoutY="233.0" text="Image of the artwork :" />
+      <TextField fx:id = "bidValue" layoutX="102.0" layoutY="520.0" />
+   </children>
+</AnchorPane>
