@@ -10,12 +10,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ArtworkViewOwn">
     <children>
-        <Label layoutX="282.0" layoutY="29.0" prefHeight="82.0" prefWidth="236.0" text="      ARTATAWE" textFill="#001eff">
+        <Label layoutX="282.0" layoutY="14.0" prefHeight="65.0" prefWidth="236.0" text="      ARTATAWE" textFill="#001eff">
             <font>
                 <Font size="29.0" />
             </font>
         </Label>
-        <Label layoutX="300.0" layoutY="111.0" prefHeight="38.0" prefWidth="199.0" text="    View Artwork">
+        <Label layoutX="300.0" layoutY="80.0" prefHeight="38.0" prefWidth="199.0" text="    View Artwork">
             <font>
                 <Font size="24.0" />
             </font>
@@ -25,19 +25,29 @@
         <Label layoutX="102.0" layoutY="311.0" text="Description :" />
         <TextArea editable="false" layoutX="103.0" layoutY="339.0" prefHeight="159.0" prefWidth="309.0" />
         <Label layoutX="103.0" layoutY="194.0" text="Price :" />
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#98cbfa" height="150.0" layoutX="477.0" layoutY="255.0" stroke="BLACK" strokeType="INSIDE" width="220.0" />
-        <ImageView fx:id="artworkImageMain" fitHeight="150.0" fitWidth="220.0" layoutX="477.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#98cbfa" height="150.0" layoutX="518.0" layoutY="157.0" stroke="BLACK" strokeType="INSIDE" width="220.0" />
+        <ImageView fx:id="artworkImageMain" fitHeight="150.0" fitWidth="220.0" layoutX="518.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true" />
         <Label layoutX="103.0" layoutY="274.0" text="Type of artwork :" />
-        <Label layoutX="230.0" layoutY="156.0" text="getTitle" />
-        <Label layoutX="228.0" layoutY="194.0" text="getPrice" />
-        <Label layoutX="229.0" layoutY="233.0" text="getCreator" />
-        <Label layoutX="228.0" layoutY="274.0" text="getType" />
+        <Label fx:id="title" layoutX="230.0" layoutY="156.0" text="getTitle" />
+        <Label fx:id="price" layoutX="228.0" layoutY="194.0" text="getPrice" />
+        <Label fx:id="creator" layoutX="229.0" layoutY="233.0" text="getCreator" />
+        <Label fx:id="type" layoutX="228.0" layoutY="274.0" text="getType" />
         <Button fx:id="closeBtn" layoutX="691.0" layoutY="575.0" mnemonicParsing="false" onAction="#closeWindow" text="Close" />
-        <Label layoutX="477.0" layoutY="233.0" text="Image of the artwork :" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#98cbfa" height="98.0" layoutX="587.0" layoutY="405.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#98cbfa" height="98.0" layoutX="477.0" layoutY="405.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
-      <ImageView fx:id="artworkImageMini1" fitHeight="98.0" fitWidth="110.0" layoutX="477.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="artworkImageMini2" fitHeight="98.0" fitWidth="110.0" layoutX="589.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="addImageBtn" layoutX="477.0" layoutY="519.0" mnemonicParsing="false" onAction="#browseImage" prefHeight="26.0" prefWidth="118.0" text="Add Image" />
+        <Label layoutX="518.0" layoutY="135.0" text="Image of the artwork :" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#98cbfa" height="98.0" layoutX="628.0" layoutY="307.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#98cbfa" height="98.0" layoutX="518.0" layoutY="307.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
+      <ImageView fx:id="artworkImageMini1" fitHeight="98.0" fitWidth="110.0" layoutX="518.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="artworkImageMini2" fitHeight="98.0" fitWidth="110.0" layoutX="630.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="addImageBtn" layoutX="518.0" layoutY="421.0" mnemonicParsing="false" onAction="#browseImage" prefHeight="26.0" prefWidth="118.0" text="Add Image" />
+      <Label layoutX="325.0" layoutY="156.0" text="Maximum Bids :" />
+      <Label fx:id="noOfBid" layoutX="413.0" layoutY="156.0" text="Label" />
+      <Label layoutX="325.0" layoutY="194.0" text="Width :" />
+      <Label layoutX="325.0" layoutY="233.0" text="Height :" />
+      <Label fx:id="width" layoutX="413.0" layoutY="194.0" text="Label" />
+      <Label fx:id="height" layoutX="413.0" layoutY="233.0" text="Label" />
+      <Label layoutX="325.0" layoutY="274.0" text="Material :" />
+      <Label fx:id="material" layoutX="413.0" layoutY="274.0" text="Label" />
+      <Label layoutX="325.0" layoutY="312.0" text="Depth :" />
+      <Label fx:id="depth" layoutX="413.0" layoutY="320.0" text="Label" />
     </children>
 </AnchorPane>
